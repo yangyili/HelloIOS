@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIStoryboard *mainstroyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [mainstroyboard instantiateViewControllerWithIdentifier:@"movieview"];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
+    return YES;
     return YES;
 }
 
